@@ -1,0 +1,12 @@
+{
+  "zones": [
+    { "name": "Bay of Bengal", "lat": 18.4, "lng": 88.2, "score": 24, "level": "Critical", "weight": 1.0 },
+    { "name": "Odisha Coast", "lat": 20.2, "lng": 86.8, "score": 38, "level": "High", "weight": 0.82 },
+    { "name": "Eastern India", "lat": 23.1, "lng": 84.4, "score": 52, "level": "Moderate", "weight": 0.62 },
+    { "name": "Bangladesh Coast", "lat": 22.4, "lng": 90.2, "score": 34, "level": "High", "weight": 0.78 },
+    { "name": "Central India", "lat": 21.2, "lng": 78.1, "score": 65, "level": "Moderate", "weight": 0.38 },
+    { "name": "Lucknow Region", "lat": 26.8467, "lng": 80.9462, "score": 72, "level": "Moderate", "weight": 0.32 },
+    { "name": "Western Bay", "lat": 16.8, "lng": 84.4, "score": 42, "level": "High", "weight": 0.7 },
+    { "name": "Assam", "lat": 26.4, "lng": 92.4, "score": 57, "level": "Moderate", "weight": 0.54 }
+  ]
+}

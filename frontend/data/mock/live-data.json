@@ -1,0 +1,8 @@
+{
+  "Risk Zones": { "windSpeed": "120 km/h", "pressure": "980 hPa", "location": "15.2°N, 88.4°E", "lastUpdated": "3 hours ago" },
+  "Cyclone": { "windSpeed": "120 km/h", "pressure": "980 hPa", "location": "15.2°N, 88.4°E", "lastUpdated": "3 hours ago" },
+  "Rainfall": { "rainfall": "84 mm / 24h", "intensity": "Heavy", "location": "Eastern Coast", "lastUpdated": "1 hour ago" },
+  "Flood": { "affectedArea": "Low-lying delta districts", "alertLevel": "Watch", "location": "Bangladesh Coast", "lastUpdated": "2 hours ago" },
+  "Wind": { "windSpeed": "120 km/h", "gusts": "145 km/h", "direction": "NE", "location": "15.2°N, 88.4°E", "lastUpdated": "3 hours ago" },
+  "Pressure": { "pressure": "980 hPa", "trend": "Falling", "location": "Bay of Bengal", "lastUpdated": "3 hours ago" }
+}

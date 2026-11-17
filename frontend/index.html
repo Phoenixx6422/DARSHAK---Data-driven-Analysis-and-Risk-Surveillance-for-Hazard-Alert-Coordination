@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f8fc">
+  <title>Home · DARSHAK Early Warning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/home.js"></script>
+</head>
+<body data-page="home">
+  <div id="app-header"></div>
+  <div class="app-shell">
+    <aside id="app-sidebar"></aside>
+    <main class="main-content home-content">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">YOUR LOCAL OVERVIEW</p>
+          <h1>Good morning, <span id="greeting-name">there</span></h1>
+          <p class="subheading">Stay informed and prepared for what’s ahead.</p>
+        </div>
+        <span class="simulated-badge"><span></span> Simulated data</span>
+      </div>
+
+      <section id="alert-section" class="alert-hero" aria-live="polite">
+        <div class="alert-art" aria-hidden="true"><div class="storm-orbit"></div></div>
+        <div class="alert-content">
+          <div class="hero-kicker"><span class="pulse-dot"></span><span id="alert-kicker">ACTIVE WEATHER ALERT</span></div>
+          <h2 id="alert-title">Cyclone Alert</h2>
+          <p id="alert-description">High risk of heavy rainfall in Eastern Coast in next 48 hours</p>
+          <a class="button button-light" href="map.html">View on Map <i data-lucide="arrow-up-right"></i></a>
+        </div>
+        <div class="carousel-dots" aria-label="Alert 1 of 1"><span class="is-active"></span><span></span><span></span></div>
+      </section>
+
+      <section class="summary-grid" aria-label="Current conditions">
+        <article class="card safety-card">
+          <div class="card-heading">
+            <div class="heading-icon icon-mint"><i data-lucide="shield-check"></i></div>
+            <div><p class="eyebrow">COMMUNITY SAFETY</p><h2>Safety Score</h2></div>
+            <button class="icon-button" aria-label="Safety score information" title="Model-based estimate"><i data-lucide="info"></i></button>
+          </div>
+          <div class="score-row">
+            <div class="score-value"><strong id="safety-score">72</strong><span>/ 100</span></div>
+            <span id="safety-risk" class="risk-badge risk-moderate">Moderate risk</span>
+          </div>
+          <div class="score-track"><span id="score-fill" style="width:72%"></span></div>
+          <p class="card-note">Your area is being monitored. Review local advisories.</p>
+        </article>
+        <article class="card weather-card">
+          <div class="card-heading">
+            <div class="heading-icon icon-blue"><i data-lucide="cloud-rain"></i></div>
+            <div><p class="eyebrow">LOCAL FORECAST</p><h2>Weather Highlights</h2></div>
+            <span class="weather-temp" id="weather-temp">26°C</span>
+          </div>
+          <p class="weather-condition" id="weather-condition">Heavy Rain <span>(Next 24h)</span></p>
+          <div class="weather-metrics">
+            <div><i data-lucide="cloud-drizzle"></i><span>Rainfall</span><strong id="weather-rain">84 mm</strong></div>
+            <div><i data-lucide="wind"></i><span>Wind speed</span><strong id="weather-wind">120 km/h</strong></div>
+            <div><i data-lucide="gauge"></i><span>Pressure</span><strong id="weather-pressure">980 hPa</strong></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="card map-card">
+        <div class="section-title">
+          <div><p class="eyebrow">REGIONAL OUTLOOK</p><h2>Mini Map</h2></div>
+          <a class="text-link" href="map.html">View Full Map <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div id="mini-map" class="mini-map" aria-label="Risk map of South Asia"></div>
+        <div class="map-legend" aria-label="Risk level legend">
+          <span><i class="legend-dot low"></i>Low</span><span><i class="legend-dot moderate"></i>Moderate</span><span><i class="legend-dot high"></i>High</span><span><i class="legend-dot critical"></i>Critical</span>
+        </div>
+      </section>
+
+      <section class="card recent-news">
+        <div class="section-title">
+          <div><p class="eyebrow">STAY INFORMED</p><h2>Recent News</h2></div>
+          <a class="text-link" href="news.html">View All <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div id="recent-news-list" class="news-list compact-list"><div class="loading-state">Loading latest updates…</div></div>
+      </section>
+      <p class="disclaimer"><i data-lucide="info"></i> Risk estimates are model-based and uncertain; follow official guidance.</p>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

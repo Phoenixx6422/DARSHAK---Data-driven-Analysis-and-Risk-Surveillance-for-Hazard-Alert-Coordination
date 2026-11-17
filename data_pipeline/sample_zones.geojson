@@ -1,0 +1,107 @@
+{
+  "type": "FeatureCollection",
+  "name": "PDEWS_Regional_Risk_Zones",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_code": "RC-SEC4-CRIT",
+        "zone_name": "Coastal Raichur Sector 4",
+        "disaster_type": "Cyclone",
+        "risk_level": "Critical",
+        "color": "Red",
+        "safety_score": 24.5,
+        "wind_speed_kmh": 115,
+        "rainfall_mmh": 65,
+        "advisory": "Critical cyclonic storm warning. Immediate evacuation order active."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [77.345, 16.210],
+            [77.370, 16.210],
+            [77.370, 16.230],
+            [77.345, 16.230],
+            [77.345, 16.210]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_code": "KB-ZONEB-HIGH",
+        "zone_name": "Krishna River Basin Zone B",
+        "disaster_type": "Flood",
+        "risk_level": "High",
+        "color": "Orange",
+        "safety_score": 45.0,
+        "river_level_m": 8.4,
+        "rainfall_mmh": 45,
+        "advisory": "High flood vulnerability. Water level exceeding warning mark."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [77.380, 16.280],
+            [77.420, 16.280],
+            [77.420, 16.320],
+            [77.380, 16.320],
+            [77.380, 16.280]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_code": "RC-URB1-MOD",
+        "zone_name": "Raichur Urban Zone 1",
+        "disaster_type": "Heatwave",
+        "risk_level": "Moderate",
+        "color": "Yellow",
+        "safety_score": 68.0,
+        "temperature_c": 41.5,
+        "advisory": "Moderate heatwave advisory. Stay hydrated during peak hours."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [77.320, 16.180],
+            [77.350, 16.180],
+            [77.350, 16.210],
+            [77.320, 16.210],
+            [77.320, 16.180]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_code": "RC-PLN3-LOW",
+        "zone_name": "Raichur Plateau Plains Sector 3",
+        "disaster_type": "None",
+        "risk_level": "Low",
+        "color": "Green",
+        "safety_score": 92.0,
+        "advisory": "Normal weather conditions. Normal activity permitted."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [77.280, 16.150],
+            [77.310, 16.150],
+            [77.310, 16.180],
+            [77.280, 16.180],
+            [77.280, 16.150]
+          ]
+        ]
+      }
+    }
+  ]
+}

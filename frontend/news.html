@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disaster News · DARSHAK Early Warning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/news.js"></script>
+</head>
+<body data-page="news">
+  <div id="app-header"></div>
+  <div class="app-shell">
+    <aside id="app-sidebar"></aside>
+    <main class="main-content news-content">
+      <div class="page-heading">
+        <div><p class="eyebrow">LATEST UPDATES</p><h1>Disaster News</h1><p class="subheading">Weather and hazard updates from across the region.</p></div>
+        <span class="simulated-badge"><span></span> Simulated data</span>
+      </div>
+      <section class="card news-panel">
+        <div class="news-filters">
+          <label for="news-filter">Filter by type</label>
+          <div class="select-wrap"><i data-lucide="list-filter"></i><select id="news-filter">
+            <option value="all">All updates</option><option value="Cyclone">Cyclone</option><option value="Rainfall">Rainfall</option><option value="Flood">Flood</option><option value="Landslide">Landslide</option>
+          </select><i data-lucide="chevron-down"></i></div>
+          <span id="news-count" class="news-count"></span>
+        </div>
+        <div id="news-list" class="news-list"><div class="loading-state">Loading news updates…</div></div>
+      </section>
+      <p class="disclaimer"><i data-lucide="info"></i> Risk estimates are model-based and uncertain; follow official guidance.</p>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

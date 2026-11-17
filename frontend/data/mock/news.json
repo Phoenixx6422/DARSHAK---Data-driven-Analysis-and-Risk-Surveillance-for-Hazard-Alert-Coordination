@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "type": "Cyclone",
+      "headline": "Cyclone alert issued for the Eastern Coast",
+      "source": "Regional Weather Desk",
+      "time": "2 hours ago",
+      "image": "https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&w=360&q=80",
+      "summary": "Strong winds and heavy rain are possible along coastal districts over the next 48 hours."
+    },
+    {
+      "id": 2,
+      "type": "Rainfall",
+      "headline": "Heavy rainfall in Assam, rivers above danger level",
+      "source": "Weather Monitor",
+      "time": "5 hours ago",
+      "image": "https://images.unsplash.com/photo-1519692933481-e162a57d6721?auto=format&fit=crop&w=360&q=80",
+      "summary": "Residents near river banks are advised to monitor local updates and avoid flooded roads."
+    },
+    {
+      "id": 3,
+      "type": "Landslide",
+      "headline": "Landslide risk increased in Uttarakhand",
+      "source": "Regional Weather Desk",
+      "time": "1 day ago",
+      "image": "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=360&q=80",
+      "summary": "Recent rainfall has increased the possibility of slope instability in vulnerable areas."
+    },
+    {
+      "id": 4,
+      "type": "Flood",
+      "headline": "Flood watch continues for low-lying delta districts",
+      "source": "Community Resilience Bulletin",
+      "time": "1 day ago",
+      "image": "https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=360&q=80",
+      "summary": "Keep emergency supplies accessible and follow instructions from local officials."
+    },
+    {
+      "id": 5,
+      "type": "Rainfall",
+      "headline": "Monsoon showers expected across central India",
+      "source": "Weather Monitor",
+      "time": "2 days ago",
+      "image": "https://images.unsplash.com/photo-1433863448220-78aaa064ff47?auto=format&fit=crop&w=360&q=80",
+      "summary": "Scattered showers are forecast, with locally heavy rain possible in some districts."
+    }
+  ]
+}

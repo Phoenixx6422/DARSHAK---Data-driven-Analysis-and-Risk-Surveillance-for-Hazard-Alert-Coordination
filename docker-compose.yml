@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgis/postgis:15-3.3-alpine
+    container_name: pdews_postgres
+    environment:
+      POSTGRES_DB: pdews_db
+      POSTGRES_USER: pdews_admin
+      POSTGRES_PASSWORD: securepassword123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/migrations:/docker-entrypoint-initdb.d/
+    networks:
+      - pdews_net
+
+  backend:
+    build: ./backend
+    container_name: pdews_backend
+    environment:
+      DATABASE_URL: postgresql://pdews_admin:securepassword123@db:5432/pdews_db
+      PORT: 8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - pdews_net
+
+  health_api:
+    build: ./backend
+    container_name: pdews_health_api
+    ports:
+      - "8001:8000"
+    networks:
+      - pdews_net
+
+  prometheus:
+    image: prom/prometheus:v2.51.0
+    container_name: pdews_prometheus
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - pdews_net
+
+  grafana:
+    image: grafana/grafana:10.4.0
+    container_name: pdews_grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    networks:
+      - pdews_net
+
+volumes:
+  postgres_data:
+
+networks:
+  pdews_net:
+    driver: bridge
