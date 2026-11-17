@@ -1,0 +1,16 @@
+{
+  "name": "User Name",
+  "email": "user@example.com",
+  "phone": "+91 98765 43210",
+  "location": "Lucknow, Uttar Pradesh",
+  "lat": 26.8467,
+  "lng": 80.9462,
+  "familyContacts": [
+    { "name": "Ananya Sharma", "phone": "+91 98765 43211" },
+    { "name": "Rohan Sharma", "phone": "+91 98765 43212" }
+  ],
+  "emergencyContact": "Emergency contact: +91 112",
+  "bloodGroup": "B+",
+  "otherInfo": "Asthma medication in emergency kit",
+  "preferences": { "smsAlerts": true, "emailAlerts": true, "appAlerts": true }
+}

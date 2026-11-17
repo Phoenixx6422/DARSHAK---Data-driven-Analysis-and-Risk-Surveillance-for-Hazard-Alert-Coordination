@@ -1,0 +1,18 @@
+{
+  "data_source": "simulated",
+  "storms": [
+    {
+      "storm_id": "BOB_2026_01",
+      "name": "DANA",
+      "lat": 18.2,
+      "lon": 86.8,
+      "max_wind_kt": 72.0,
+      "central_pressure_mb": 978.0,
+      "wind_change_24h_kt": 18.0,
+      "pressure_change_24h_mb": -10.0,
+      "forward_speed_kt": 11.5,
+      "heading_deg": 330.0,
+      "updated_at": "2026-11-16T18:00:00Z"
+    }
+  ]
+}

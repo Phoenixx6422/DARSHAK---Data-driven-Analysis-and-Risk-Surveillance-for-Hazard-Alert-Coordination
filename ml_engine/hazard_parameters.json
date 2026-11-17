@@ -1,0 +1,22 @@
+{
+  "system": "PDEWS Hazard Parameter Reference",
+  "architectural_rule": "Authority has NO approval or veto power. Scoring directly triggers automated alerts.",
+  "classification_thresholds": {
+    "Critical": { "min_score": 0.0, "max_score": 30.0, "color": "Red", "alert_trigger": true },
+    "High": { "min_score": 30.1, "max_score": 60.0, "color": "Orange", "alert_trigger": true },
+    "Moderate": { "min_score": 60.1, "max_score": 80.0, "color": "Yellow", "alert_trigger": false },
+    "Low": { "min_score": 80.1, "max_score": 100.0, "color": "Green", "alert_trigger": false }
+  },
+  "hazard_thresholds": {
+    "Cyclone": {
+      "Critical": { "wind_speed_kmh": 100, "pressure_drop_hpa": 20 },
+      "High": { "wind_speed_kmh": 70, "pressure_drop_hpa": 12 },
+      "Moderate": { "wind_speed_kmh": 45, "pressure_drop_hpa": 6 }
+    },
+    "Flood": {
+      "Critical": { "rainfall_mmh": 60, "river_level_ratio": 1.2 },
+      "High": { "rainfall_mmh": 35, "river_level_ratio": 1.0 },
+      "Moderate": { "rainfall_mmh": 20, "river_level_ratio": 0.8 }
+    }
+  }
+}

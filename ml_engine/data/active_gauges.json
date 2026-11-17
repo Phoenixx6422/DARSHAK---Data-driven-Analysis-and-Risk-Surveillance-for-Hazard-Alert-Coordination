@@ -1,0 +1,21 @@
+{
+  "data_source": "simulated",
+  "gauges": [
+    {
+      "station_id": "CWC_GAN_042",
+      "name": "Patna Ganga Gauge",
+      "lat": 25.61,
+      "lon": 85.15,
+      "water_level_m": 48.5,
+      "danger_level_m": 48.6,
+      "highest_flood_level_m": 50.5,
+      "rainfall_24h_mm": 85.0,
+      "soil_saturation_pct": 88.0,
+      "upstream_reservoir_inflow_cumecs": 3200.0,
+      "reservoir_storage_pct": 91.0,
+      "river_discharge_cumecs": 12000.0,
+      "basin_monsoon_intensity": 0.85,
+      "updated_at": "2026-11-16T18:00:00Z"
+    }
+  ]
+}
