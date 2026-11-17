@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile · DARSHAC Early Warning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/profile.js"></script>
+</head>
+<body data-page="profile">
+  <div id="app-header"></div>
+  <div class="app-shell">
+    <aside id="app-sidebar"></aside>
+    <main class="main-content profile-content">
+      <div class="page-heading">
+        <div><p class="eyebrow">YOUR ACCOUNT</p><h1>Profile & Contacts</h1><p class="subheading">Keep your information current so you can stay connected.</p></div>
+        <span class="simulated-badge"><span></span> Simulated data</span>
+      </div>
+      <form id="profile-form" novalidate>
+        <section class="profile-header card">
+          <div class="avatar-large"><i data-lucide="user-round"></i></div>
+          <div class="profile-identity"><h2 id="profile-name-display">User Name</h2><input id="profile-name-input" name="name" autocomplete="name" hidden><p id="profile-email-display">user@example.com</p></div>
+          <button type="button" id="edit-profile-button" class="button button-outline"><i data-lucide="pencil"></i> Edit Profile</button>
+        </section>
+
+        <section class="card profile-section">
+          <div class="section-title"><div><p class="eyebrow">HOW TO REACH YOU</p><h2>Contact Information</h2></div><i class="section-symbol" data-lucide="contact-round"></i></div>
+          <div class="profile-field-list">
+            <div class="profile-field" data-field="phone">
+              <div class="field-icon"><i data-lucide="phone"></i></div><div class="field-body"><span class="field-label">Phone Number</span><span class="field-value" id="phone-display"></span><input id="phone-input" name="phone" type="tel" autocomplete="tel" hidden></div>
+              <button type="button" class="text-button edit-field" data-edit="phone">Edit</button>
+            </div>
+            <div class="profile-field" data-field="email">
+              <div class="field-icon"><i data-lucide="mail"></i></div><div class="field-body"><span class="field-label">Email Address</span><span class="field-value" id="email-display"></span><input id="email-input" name="email" type="email" autocomplete="email" hidden></div>
+              <button type="button" class="text-button edit-field" data-edit="email">Edit</button>
+            </div>
+            <div class="location-field">
+              <div class="field-icon"><i data-lucide="map-pin"></i></div>
+              <div class="location-info"><span class="field-label">Location</span><strong id="location-display"></strong></div>
+              <button type="button" id="change-location-button" class="text-button">Change Location</button>
+              <div id="location-preview" class="location-preview" aria-label="Map preview of saved location"></div>
+              <label class="sr-only" for="location-input">Saved location</label><input id="location-input" name="location" class="location-input" hidden>
+            </div>
+          </div>
+          <p id="contact-error" class="field-error" role="alert" hidden></p>
+          <div class="contact-form-wrap">
+            <button type="button" class="subtle-toggle" id="contact-form-toggle"><i data-lucide="message-square-text"></i> Send a message <i data-lucide="chevron-down"></i></button>
+            <div id="contact-form-fields" class="contact-form-fields" hidden>
+              <label for="contact-message">Your message</label><textarea id="contact-message" rows="3" maxlength="500" required placeholder="How can we help?"></textarea>
+              <button type="button" id="send-message-button" class="button button-primary">Send message</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="card profile-section">
+          <div class="section-title"><div><p class="eyebrow">BE READY TOGETHER</p><h2>Emergency Information</h2></div><i class="section-symbol" data-lucide="heart-pulse"></i></div>
+          <div class="emergency-row"><div class="field-icon icon-violet"><i data-lucide="users-round"></i></div><div class="field-body"><span class="field-label">Family Contacts</span><div id="family-list" class="family-list"></div></div><button type="button" id="manage-family-button" class="text-button">Add / Edit</button></div>
+          <div class="emergency-row"><div class="field-icon icon-red"><i data-lucide="phone-call"></i></div><div class="field-body"><span class="field-label">Emergency Contacts</span><strong id="emergency-contact-display"></strong><input id="emergency-contact-input" name="emergencyContact" hidden></div><button type="button" id="edit-emergency-button" class="text-button">Edit</button></div>
+          <div class="emergency-row"><div class="field-icon icon-red"><i data-lucide="droplet"></i></div><div class="field-body"><span class="field-label">Blood Group</span><strong id="blood-group-display"></strong><select id="blood-group-input" name="bloodGroup" hidden><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option><option>Unknown</option></select></div><button type="button" id="edit-blood-button" class="text-button">Edit</button></div>
+          <div class="emergency-row other-info-row"><div class="field-icon"><i data-lucide="file-text"></i></div><div class="field-body"><label class="field-label" for="other-info-input">Other information</label><span id="other-info-display" class="field-value"></span><input id="other-info-input" name="otherInfo" hidden></div><button type="button" id="edit-other-button" class="text-button">Edit</button></div>
+          <div class="preference-block">
+            <div><p class="field-label">Alert preferences</p><p class="muted-copy">Choose how you’d like to receive emergency notifications.</p></div>
+            <div class="toggle-list">
+              <label class="toggle-option"><span><i data-lucide="message-circle"></i> SMS alerts</span><input type="checkbox" name="smsAlerts"><span class="toggle-switch"></span></label>
+              <label class="toggle-option"><span><i data-lucide="mail"></i> Email alerts</span><input type="checkbox" name="emailAlerts"><span class="toggle-switch"></span></label>
+              <label class="toggle-option"><span><i data-lucide="bell"></i> App notifications</span><input type="checkbox" name="appAlerts"><span class="toggle-switch"></span></label>
+            </div>
+          </div>
+          <div class="profile-actions"><p id="profile-form-error" class="field-error" role="alert" hidden></p><button id="save-profile-button" class="button button-primary" type="submit" hidden><i data-lucide="save"></i> Save changes</button></div>
+        </section>
+        <p class="disclaimer"><i data-lucide="info"></i> Risk estimates are model-based and uncertain; follow official guidance.</p>
+      </form>
+    </main>
+  </div>
+  <dialog id="family-dialog" class="family-dialog">
+    <form method="dialog" id="family-dialog-form">
+      <div class="dialog-heading"><div><p class="eyebrow">EMERGENCY CONTACTS</p><h2>Family Contacts</h2></div><button class="icon-button" value="cancel" aria-label="Close"><i data-lucide="x"></i></button></div>
+      <div id="family-contact-fields"></div>
+      <button type="button" id="add-family-contact" class="text-button add-family"><i data-lucide="plus"></i> Add contact</button>
+      <div class="dialog-actions"><button class="button button-outline" value="cancel">Cancel</button><button type="button" id="save-family-button" class="button button-primary">Save contacts</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

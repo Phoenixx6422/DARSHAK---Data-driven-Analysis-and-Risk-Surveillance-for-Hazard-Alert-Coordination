@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f8fc">
+  <title>Risk Map · DARSHAC Early Warning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/map.js"></script>
+</head>
+<body data-page="map">
+  <div id="app-header"></div>
+  <div class="app-shell map-shell">
+    <aside id="app-sidebar"></aside>
+    <main class="map-page-content">
+      <div class="map-toolbar">
+        <div class="map-title"><p class="eyebrow">LIVE REGIONAL VIEW</p><h1>Risk Map</h1></div>
+        <div class="map-toolbar-actions">
+          <span class="simulated-badge"><span></span> Simulated data</span>
+          <div class="layers-menu-wrap">
+            <button id="layers-toggle" class="button button-white"><i data-lucide="layers-2"></i> Layers <i data-lucide="chevron-down"></i></button>
+            <div id="layers-menu" class="layers-menu" hidden></div>
+          </div>
+        </div>
+      </div>
+      <div class="map-canvas-wrap">
+        <div id="risk-map" class="risk-map" aria-label="Interactive risk map of South Asia"></div>
+        <div class="map-legend floating-legend" aria-label="Risk level legend">
+          <span><i class="legend-dot low"></i>Low</span><span><i class="legend-dot moderate"></i>Moderate</span><span><i class="legend-dot high"></i>High</span><span><i class="legend-dot critical"></i>Critical</span>
+        </div>
+        <div id="map-layer-label" class="map-layer-label"><i data-lucide="map"></i><span>Risk Zones</span></div>
+      </div>
+      <section class="card live-data-card">
+        <div class="live-data-heading">
+          <div><p class="eyebrow">CURRENT CONDITIONS</p><h2>Live Data: <span id="live-layer-name">Risk Zones</span></h2></div>
+          <span class="updated-pill"><i data-lucide="clock-3"></i> Updated <span id="live-updated">3 hours ago</span></span>
+        </div>
+        <div id="live-data-content" class="live-data-grid"></div>
+        <p class="disclaimer"><i data-lucide="info"></i> Risk estimates are model-based and uncertain; follow official guidance.</p>
+      </section>
+      <p id="map-error" class="inline-error" hidden></p>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

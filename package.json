@@ -1,0 +1,21 @@
+{
+  "name": "aegis-frontend",
+  "version": "1.0.0",
+  "description": "Aegis pre-disaster frontend unit tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "coverage": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": "true",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2"
+  }
+}
